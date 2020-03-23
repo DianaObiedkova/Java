@@ -26,7 +26,7 @@ public abstract class Aviary {
         return busyCountPlaces;
     }
 
-    public  String addAnimal(Animal animal)  {
+    public  Boolean addAnimal(Animal animal) throws Exception {
 
 
         if (maxCountPlaces - busyCountPlaces != 0) {
@@ -35,14 +35,14 @@ public abstract class Aviary {
             cages[busyCountPlaces]=animal.getId();
 
             animals.add(animal);
-            return "Animal was added !";
+            return true;
         }
 
-        //throw new Exception("We have some troubles... There aren't any empty aviaries(((");
-        return "We have some troubles... There aren't any empty aviaries(((";
+        throw new Exception("We have some troubles... There aren't any empty aviaries(((");
+        //return "We have some troubles... There aren't any empty aviaries(((";
     }
 
-    public String removeAnimal(Animal animal)  {
+    public Boolean removeAnimal(Animal animal) throws Exception {
 
         for(int i=0; i<cages.length;i++){
 
@@ -50,12 +50,12 @@ public abstract class Aviary {
                 busyCountPlaces--;
                 animals.remove(animal);
 
-                return "Animal was removed!";
+                return true;
             }
         }
 
-        //throw new Exception("There was a problem with removal...");
-        return "There was a problem with removal...";
+        throw new Exception("There was a problem with removal...");
+        //return "There was a problem with removal...";
     }
 
 }
