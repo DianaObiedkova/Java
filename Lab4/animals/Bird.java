@@ -4,7 +4,7 @@ public abstract class Bird extends Animal {
     private boolean canFly;
 
     public Bird(int id, int age, double weight, boolean fly){
-        super(id, age, weight, AnimalType.Bird);
+        super(id, age, weight);
         canFly=fly;
     }
 
