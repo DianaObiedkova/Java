@@ -6,10 +6,12 @@ import aviaries.UngulatesAviary;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
 
 public class Zoo {
     public List<Aviary> aviaries =new ArrayList<Aviary>();
-
+   
     public Zoo(){
         addAviaries();
     }
@@ -29,47 +31,53 @@ public class Zoo {
         aviaries.add(lionAviary);
     }
 
-    public <T extends Animal> String addToAviary(T t)  {
-
-        Object obj=t.getClass();
-        if(Eagle.class.equals(obj)){
+    public <T extends Animal> Boolean addToAviary(T t) throws Exception {
+/*
+        Field aviaryListField=Zoo.class.getDeclaredField("aviaries");
+        ParameterizedType aviaryListType=(ParameterizedType)aviaryListField.getGenericType();
+         Class<?> aviaryListClass=(Class<?>)aviaryListType.getActualTypeArguments()[0];
+        System.out.println(aviaryListClass);
+*/
+        if(t instanceof Eagle){
+          
             aviaries.get(0).addAnimal(t);
-            return "Eagle!";
+            return true;
         }
-        else if(Zebra.class.equals(obj)){
+        else if(t instanceof Zebra){
             aviaries.get(2).addAnimal(t);
-            return "Zebra!";
+            return true;
         }
-        else if(Lion.class.equals(obj)){
+        else if(t instanceof Lion){
             aviaries.get(3).addAnimal(t);
-            return "Lion!";
+            return true;
         }
-        else if(Giraffe.class.equals(obj)){
+        else if(t instanceof Giraffe){
             aviaries.get(1).addAnimal(t);
-            return "Giraffe!";
+            return true;
         }
-        return "Animal doesn't exist and wasn't added(";
+
+        throw new Exception( "Animal doesn't exist and wasn't added(");
     }
 
-    public <T extends Animal> String removeFromAviary(T t) {
-        Object obj=t.getClass();
-        if(Eagle.class.equals(obj)){
+    public <T extends Animal> Boolean removeFromAviary(T t) throws Exception {
+
+        if(t instanceof Eagle){
             aviaries.get(0).removeAnimal(t);
-            return "Removed!";
+            return true;
         }
-        else if(Zebra.class.equals(obj)){
+        else if(t instanceof Zebra){
             aviaries.get(2).removeAnimal(t);
-            return "Removed!";
+            return true;
         }
-        else if(Lion.class.equals(obj)){
+        else if(t instanceof Lion){
             aviaries.get(3).removeAnimal(t);
-            return "Removed!";
+            return true;
         }
-        else if(Giraffe.class.equals(obj)){
+        else if(t instanceof Giraffe){
             aviaries.get(1).removeAnimal(t);
-            return "Removed!";
+            return true;
         }
-        return "Animal doesn't exist and wasn't removed(";
+        throw new Exception("Animal doesn't exist and wasn't removed(");
     }
 
     public int getCountOfAnimals(){
