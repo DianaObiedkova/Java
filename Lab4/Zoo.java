@@ -32,12 +32,12 @@ public class Zoo {
     }
 
     public <T extends Animal> Boolean addToAviary(T t) throws Exception {
-
+/*
         Field aviaryListField=Zoo.class.getDeclaredField("aviaries");
         ParameterizedType aviaryListType=(ParameterizedType)aviaryListField.getGenericType();
          Class<?> aviaryListClass=(Class<?>)aviaryListType.getActualTypeArguments()[0];
         System.out.println(aviaryListClass);
-
+*/
         if(t instanceof Eagle){
 
             aviaries.get(0).addAnimal(t);
