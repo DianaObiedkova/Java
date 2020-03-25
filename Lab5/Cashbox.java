@@ -41,28 +41,3 @@ public class Cashbox {
         pros.removeAll(pros);
     }
 }
-
-/*
-                List<Product> temp=products;
-                temp.stream()
-                        //.filter(p->p.equals(product))
-                        .forEach(p->{
-                            if(p.getName()==product.getName())
-                                p.setAmount(p.getAmount()+product.getAmount());});
-                products.remove(pro);
-                products.addAll(temp);
-
-                */
-
-/*
-        if(!products.contains(product))
-             products.add(product);
-        else{
-            products.stream()
-                    //.filter(product1 -> product1.getName()==product.getName())
-                    .forEach(p->{
-                        if(p.getName()==product.getName())
-                            p.setAmount(p.getAmount()+product.getAmount());});
-        }
-
- */
