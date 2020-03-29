@@ -8,7 +8,6 @@ public abstract class Animal {
     public Animal(int id, int age,double weight){
         this.id=id;
         this.age=age;
-        this.type=type;
         this.weight=weight;
     }
 

@@ -15,10 +15,15 @@ public class Main {
 
         System.out.println(zoo.addToAviary(eagle));
         System.out.println(zoo.addToAviary(gir));
-        System.out.println(zoo.addToAviary(lion));
-        System.out.println(zoo.addToAviary(zebra));
+        //System.out.println(zoo.addToAviary(lion));
+        //System.out.println(zoo.addToAviary(zebra));
+
+
+        //System.out.println(zoo.getCountOfAnimals());
+
+
+        //zoo.removeFromAviary(lion);
 
         System.out.println(zoo.getCountOfAnimals());
-
     }
 }
