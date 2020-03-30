@@ -4,12 +4,10 @@ import java.util.Objects;
 
 public class Product {
     private String name;
-    private int amount;
     private ProductType type;
 
-    public Product(String name,int amount,ProductType type){
+    public Product(String name, ProductType type){
         this.name=name;
-        this.amount=amount;
         this.type=type;
     }
     public String getName() {
@@ -18,14 +16,6 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public ProductType getType() {
