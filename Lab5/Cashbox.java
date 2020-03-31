@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Map.*;
+import static java.util.Map.Entry.comparingByKey;
+
 public class Cashbox {
     public List<Product> products=new ArrayList<Product>();
 
