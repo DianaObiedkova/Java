@@ -9,16 +9,15 @@ class CashboxTest {
 
     @org.junit.jupiter.api.Test
     void showCheck() {
+        
         Cashbox cash=new Cashbox();
-        cash.AddToCheck(new Product("Milk",3,ProductType.Diary));
-        cash.AddToCheck(new Product("Milk",2,ProductType.Diary));
-        cash.AddToCheck(new Product("Milk",3,ProductType.Diary));
+        cash.AddToCheck(new Product("Milk",ProductType.Diary),5);
+        cash.AddToCheck(new Product("Milk",ProductType.Diary),3);
+        cash.AddToCheck(new Product("Milk",ProductType.Diary),3);
 
-        cash.AddToCheck(new Product("Watermelon",9,ProductType.Fruits));
-        cash.AddToCheck(new Product("Banana",10,ProductType.Fruits));
+        cash.AddToCheck(new Product("Watermelon",ProductType.Fruits),9);
+        cash.AddToCheck(new Product("Banana",ProductType.Fruits),10);
 
-        Assert.assertEquals("Banana\t10\nMilk\t8\nWatermelon\t9\n",cash.showCheck());
-
-
-    }
+        Assert.assertEquals("Banana\t10\nMilk\t11\nWatermelon\t9\n",cash.showCheck());
+   }
 }
