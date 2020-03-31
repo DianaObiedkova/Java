@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private String name;
     private ProductType type;
 
@@ -45,5 +45,10 @@ public class Product {
     @Override
     public int hashCode(){
         return name!=null?name.hashCode():0;
+    }
+    
+    @Override
+    public int compareTo(Product pro) {
+        return this.name.compareTo(pro.name);
     }
 }
