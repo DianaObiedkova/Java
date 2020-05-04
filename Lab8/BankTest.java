@@ -53,22 +53,5 @@ class BankTest {
 
         Assertions.assertEquals(first, second);
     }
-/*
-    public void createAccounts(Account[] accs){
-        for (int j = 0; j < 100; j++) {
-            Account from = accs[(int) (Math.random() * accs.length)];//accs[j];//
-            Account to = accs[(int) (Math.random() * accs.length)];//accs[100-j];//
-            bank.transfer(from, to, count);
-        }
-    }
 
- */
 }
-
-/*() -> {
-                for (int j = 0; j < 100; j++) {
-                    Account from = accounts[(int) (Math.random() * accounts.length)];
-                    Account to = accounts[(int) (Math.random() * accounts.length)];
-                    bank.transfer(from, to, 1);
-                }
-            }*/
