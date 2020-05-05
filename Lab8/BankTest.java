@@ -28,12 +28,10 @@ class BankTest {
         for (int i = 0; i < accounts.length; i++) {
 
             Thread thread = new Thread(() -> {
-                for (int j = 0; j < 100; j++) {
 
                     Account from = accounts[(int) (Math.random() * accounts.length)];
                     Account to = accounts[(int) (Math.random() * accounts.length)];
                     bank.transfer(from, to, count);
-                }
             });
 
             threads.add(thread);
