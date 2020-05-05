@@ -18,8 +18,8 @@ public class Bank {
         synchronized (max) {
             synchronized (min) {
                 if (from.getBalance() >= count) {
-                    from.withdraw(count);
-                    to.deposit(count);
+                    from.minus(count);
+                    to.plus(count);
                 } else {
                     System.out.println("Not enough money in the account for transfering: " + from.getNumber() + " " + from.getBalance());
                 }
