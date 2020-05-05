@@ -24,11 +24,11 @@ public class Account {
         this.number = number;
     }
 
-    public synchronized void withdraw(double count){
+    public synchronized void minus(double count){
         balance-=count;
     }
 
-    public synchronized void deposit(double count){
+    public synchronized void plus(double count){
         balance+=count;
     }
 }
